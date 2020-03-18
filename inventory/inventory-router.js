@@ -51,7 +51,7 @@ router.delete(`${process.env.APID}`, validateById, (req, res) => {
   const { id } = req.params
   db.remove(id)
     .then(car => {
-      res.status(200).json(car)
+      res.status(200).json(req.car)
     })
     .catch(err => {
       res.status(500).json({ err: 'Error' })
